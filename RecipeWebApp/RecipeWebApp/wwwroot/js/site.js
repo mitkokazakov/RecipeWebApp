@@ -1,4 +1,16 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let burgerMenuRef = document.querySelector('.burger-menu');
+let sideMenuRef = document.querySelector('.sidemenu');
 
-// Write your JavaScript code.
+function onClickBurgerMenu() {
+
+    if (!sideMenuRef.classList.contains('open')) {
+        // sideMenuRef.styles.setProperty("display", "flex");
+        sideMenuRef.classList.add('open');
+    }
+    else {
+        sideMenuRef.classList.remove('open');
+    }
+}
+
+burgerMenuRef.addEventListener('click', onClickBurgerMenu);
+

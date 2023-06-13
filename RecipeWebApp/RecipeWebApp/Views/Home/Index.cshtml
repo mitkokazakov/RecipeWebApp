@@ -1,8 +1,81 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
+<div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+<div class="intro">
+        <div class="about">
+            <div class="about-img-wrapper">
+                <!-- <img src="./images/cooker.png" alt=""> -->
+            </div>
+
+            <h1>Hello there! I am Sara.<br/> Welcome to my kitchen!</h1>
+        </div>
+  </div>
+
+ <div class="recent-recipes">
+        <h1>Recent recipes</h1>
+
+        <div class="recent-recipes-first">
+            <div class="recipe-small" style="background-image: url('./images/carrotcake.jpg');">
+
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fluffy cake with lemon and berries, orange, sauce and oil</h3>
+                </div>
+            </div>
+
+            <div class="recipe-small" style="background-image: url('./images/cake.jpg');">
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
+                </div>
+            </div>
+
+            <div class="recipe-large" style="background-image: url('./images/mishmash.jpg');">
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fluffy cake with lemon, fresh lemon and cream</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="recent-recipes-second">
+            <div class="recipe-large" style="background-image: url('./images/cake.jpg');">
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
+                </div>
+            </div>
+            <div class="recipe-small" style="background-image: url('./images/bob.png');">
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fried bacon with honey and mustard</h3>
+                </div>
+            </div>
+
+            <div class="recipe-small" style="background-image: url('./images/cake.jpg');">
+                <!-- <img class="recipe-image" src="./images/cake.jpg" alt=""> -->
+
+                <div class="recent-recipes-heading">
+                    <p class="recent-recipes-category">MAIN DISH</p>
+                    <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
