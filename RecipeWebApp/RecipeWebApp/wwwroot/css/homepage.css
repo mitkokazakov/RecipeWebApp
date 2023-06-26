@@ -116,3 +116,29 @@
         width: 100%;
     }
 }
+
+@media screen and (max-width: 480px) {
+    
+    .sidemenu.open {
+        width: 100%;
+        bottom: -180px;
+    }
+
+    .about h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .recipe-small, .recipe-large {
+        width: 100%;
+    }
+
+    .single-recipe-info ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .recipe-image-input {
+        margin-bottom: 30px;
+    }
+}

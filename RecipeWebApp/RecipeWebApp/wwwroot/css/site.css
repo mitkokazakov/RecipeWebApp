@@ -143,6 +143,77 @@ nav ul {
     font-size: 22px;
 }
 
+/*Login page*/
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap: 10px;
+}
+
+.email-wrapper, .pass-wrapper {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.email-input, .pass-input {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 1px solid #E87766;
+    outline: none;
+}
+
+.email-label, .pass-label, .remember-label {
+    font: 20px;
+    letter-spacing: 2px;
+}
+
+.btn-wrapper {
+    width:40%;
+    display: flex;
+    justify-content:center;
+}
+
+.login-btn {
+    width: 70%;
+    padding: 20px 30px;
+    outline: none;
+    border-radius: 25px;
+    border: 1px solid #E87766;
+    cursor:pointer;
+    background: white;
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 100;
+    font-style: normal;
+    
+}
+
+    .login-btn:hover {
+        background-color: #E87766;
+        color: white;
+    }
+
 
 
 
@@ -200,3 +271,40 @@ nav ul {
                 }
  
 }
+@media screen and (max-width: 480px) {
+    .email-wrapper, .pass-wrapper {
+        width:100%;
+    }
+
+    .login-btn {
+        width:100%;
+    }
+
+    .sidemenu.open {
+        width: 100%;
+        bottom: -180px;
+    }
+
+    .about h1 {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .recipe-small, .recipe-large {
+        width: 100%;
+    }
+
+    .single-recipe-info ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .recipe-image-input {
+        margin-bottom: 30px;
+    }
+
+    .footer-descr {
+        text-align: center;
+    }
+}
+
