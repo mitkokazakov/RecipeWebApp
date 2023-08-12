@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace RecipeWebApp.Data
 {
@@ -9,5 +10,7 @@ namespace RecipeWebApp.Data
             : base(options)
         {
         }
+
+        
     }
 }

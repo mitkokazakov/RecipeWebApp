@@ -1,0 +1,59 @@
+﻿<link rel="stylesheet" href="~/css/addrecipe.css" asp-append-version="true" />
+
+<div class="add-recipe">
+        <h1>Add Recipe</h1>
+
+        <form action="post">
+
+            <div class="add-recipe-info">
+
+                <div class="recipe-name-input recipe-column">
+                    <label for="">Recipe Name</label>
+                    <input type="text" placeholder="Name" name="">
+                </div>
+
+                <div class="recipe-category-input recipe-column">
+                    <label for="">Category</label>
+                    <select name="" id="">
+                        <option value="maindish">Main Dish</option>
+                        <option value="salads">Salads</option>
+                        <option value="desert">Desert</option>
+                        <option value="dough">Dough</option>
+                    </select>
+                </div>
+
+                <div class="recipe-cookingtime-input recipe-column">
+                    <label for="">Cooking time / in minutes /</label>
+                    <input type="text" name="" id=""></input>
+                </div>
+
+                <div class="recipe-servings-input recipe-column">
+                    <label for="">Servings</label>
+                    <input type="number" name="" id=""></input>
+                </div>
+
+                <div class="recipe-image-input recipe-column">
+                    <label for="">Add Image</label>
+                    <input type="file" name="" id=""></input>
+                </div>
+
+                <button class="save-recipe">Add</button>
+
+            </div>
+
+            <div class="ingridients-directions-inputs">
+
+                <div class="ingridients-input recipe-column">
+                    <label for="">Ingridients</label>
+                    <textarea type="text" name="" cols="15" rows="15"></textarea>
+                </div>
+
+                <div class="directions-input recipe-column">
+                    <label for="">Directions</label>
+                    <textarea type="text" name="" cols="15" rows="15"></textarea>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
