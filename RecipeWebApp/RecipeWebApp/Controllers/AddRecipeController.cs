@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RecipeWebApp.DTO;
 
 namespace RecipeWebApp.Controllers
 {
@@ -7,6 +8,12 @@ namespace RecipeWebApp.Controllers
         public IActionResult Add()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add(AddRecipeFormSubmit model)
+        {
+            return RedirectToAction("Index","Home");
         }
     }
 }
