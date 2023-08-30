@@ -14,6 +14,7 @@ namespace RecipeWebApp.Controllers
         public IActionResult Add(AddRecipeFormSubmit model)
         {
             return RedirectToAction("Index","Home");
+
         }
     }
 }
