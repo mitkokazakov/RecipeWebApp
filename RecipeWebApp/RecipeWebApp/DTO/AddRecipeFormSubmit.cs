@@ -11,12 +11,12 @@ namespace RecipeWebApp.DTO
         public string RecipeName { get; set; } = null!;
 
         [Required]
-        [MinLength(CookingMinTime, ErrorMessage = "{0} should last at least {1} minutes!")]
+        [Range(CookingMinTime,CookingMaxTime)]
         [Display(Name = "Cooking Time")]
         public int CookingTime { get; set; }
 
         [Required]
-        [MinLength(ServingsMinCount, ErrorMessage = "{0} should be at least {1}!")]
+        [Range(ServingsMinCount,ServingsMaxCount)]
         public int Servings { get; set; }
 
         [Required]
