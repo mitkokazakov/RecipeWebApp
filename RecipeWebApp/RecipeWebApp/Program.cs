@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RecipeWebApp.Data;
+using RecipeWebApp.Services;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IRecipeService, RecipeService>();
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection2");

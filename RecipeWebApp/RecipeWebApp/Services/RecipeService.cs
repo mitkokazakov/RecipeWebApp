@@ -1,10 +1,21 @@
 ﻿using RecipeWebApp.DTO;
 using RecipeWebApp.Data.Models;
+using RecipeWebApp.Data;
 
 namespace RecipeWebApp.Services
 {
     public class RecipeService : IRecipeService
     {
+
+        private readonly ApplicationDbContext db;
+        private readonly IWebHostEnvironment hostEnvironment;
+
+        public RecipeService(ApplicationDbContext db, IWebHostEnvironment hostEnvironment)
+        {
+            this.db = db;
+            this.hostEnvironment = hostEnvironment; 
+        }
+
         public async Task AddRecipe(AddRecipeFormSubmit model)
         {
             string extension = Path.GetExtension(model.Image.FileName);
@@ -22,21 +33,49 @@ namespace RecipeWebApp.Services
                 Name = model.RecipeName,
                 Instructions = model.Instructions,
                 Image = image,
+                ImageId = image.Id,
                 Category = model.Category,
                 CookingTime = model.CookingTime,
                 Servings = model.Servings,
                 CreatedOn = DateTime.UtcNow,
                 Ingridients = ingredientsArray[0],
             };
+
+            if (ingredientsArray.Count() > 1)
+            {
+                recipe.SubIngredients = ingredientsArray[1];
+            }
+
+            await db.Recipies.AddAsync(recipe);
+            await db.SaveChangesAsync();
+
+            SavePicture(model.Image,image.Id);
         }
 
         private string[] SplitIngredients(string allIngredients) 
         {
-            var arr = allIngredients.Split("\r\n\r\n");
+            var arr = allIngredients.Split("\r\n\r\n",2);
 
             return arr;
         }
 
-        
+        private void SavePicture(IFormFile image, string pictureName)
+        {
+            string uploadsFolder = Path.Combine(this.hostEnvironment.WebRootPath, "recipes");
+
+            string extension = Path.GetExtension(image.FileName);
+
+            string pictureFileName = pictureName + extension;
+
+            string filePath = Path.Combine(uploadsFolder, pictureFileName);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                image.CopyTo(fileStream);
+            }
+
+        }
+
+
     }
 }
