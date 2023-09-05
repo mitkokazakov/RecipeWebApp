@@ -8,7 +8,6 @@ namespace RecipeWebApp.Data.Models
         public Recipe()
         {
             Id = Guid.NewGuid().ToString();
-            SubIngredients = new HashSet<SubIngredient>();
         }
 
         [Required]
@@ -40,6 +39,6 @@ namespace RecipeWebApp.Data.Models
         public string ImageId { get; set; } = null!;
         public virtual Image Image { get; set; } = null!;
 
-        public virtual HashSet<SubIngredient> SubIngredients { get; set; }
+        public string? SubIngredients { get; set; }
     }
 }

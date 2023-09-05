@@ -9,7 +9,6 @@ namespace RecipeWebApp.Data
     {
         public DbSet<Recipe> Recipies { get; set; } = null!;
         public DbSet<Image> Images { get; set; } = null!;
-        public DbSet<SubIngredient> SubIngredients { get; set; } = null!;
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -30,16 +29,6 @@ namespace RecipeWebApp.Data
                                  .OnDelete(DeleteBehavior.Restrict);
 
 
-            builder.Entity<Recipe>()
-                                 .HasMany(r => r.SubIngredients)
-                                 .WithOne(si => si.Recipe)
-                                 .OnDelete(DeleteBehavior.Restrict);
-
-            builder.Entity<SubIngredient>()
-                                 .HasOne(si => si.Recipe)
-                                 .WithMany(r => r.SubIngredients)
-                                 .HasForeignKey(si => si.RecipeId)
-                                 .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(builder);
         }

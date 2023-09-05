@@ -5,7 +5,7 @@ namespace RecipeWebApp.Services
 {
     public class RecipeService : IRecipeService
     {
-        public Task AddRecipe(AddRecipeFormSubmit model)
+        public async Task AddRecipe(AddRecipeFormSubmit model)
         {
             string extension = Path.GetExtension(model.Image.FileName);
 
@@ -37,16 +37,6 @@ namespace RecipeWebApp.Services
             return arr;
         }
 
-        private List<SubIngredient> SubIngredientsSplit(string[] allIngredients) 
-        {
-            List<SubIngredient> subIngredients = new List<SubIngredient>();
-
-            foreach (var subIngr in allIngredients.Skip(1))
-            {
-
-            }
-
-            return subIngredients;
-        }
+        
     }
 }
