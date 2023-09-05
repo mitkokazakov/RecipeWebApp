@@ -13,6 +13,12 @@ namespace RecipeWebApp.Controllers
         [HttpPost]
         public IActionResult Add(AddRecipeFormSubmit model)
         {
+
+            if (!ModelState.IsValid) 
+            {
+                return View();
+            }
+
             return RedirectToAction("Index","Home");
 
         }

@@ -78,3 +78,8 @@
         background-color: #E87766;
         color: #ECF6F6;
     }
+
+.validation-script {
+    color: #E87766;
+    font-weight: bold;
+}

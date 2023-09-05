@@ -12,6 +12,7 @@
             <div class="recipe-name-input recipe-column">
                 <label asp-for="RecipeName">Recipe Name</label>
                 <input asp-for="RecipeName" type="text" placeholder="Name">
+                <span asp-validation-for="RecipeName" class="validation-script"></span>
             </div>
 
             <div class="recipe-category-input recipe-column">
@@ -27,16 +28,19 @@
             <div class="recipe-cookingtime-input recipe-column">
                 <label asp-for="CookingTime">Cooking time / in minutes /</label>
                 <input asp-for="CookingTime" type="text" id="">
+                <span asp-validation-for="CookingTime" class="validation-script"></span>
             </div>
 
             <div class="recipe-servings-input recipe-column">
                 <label asp-for="Servings">Servings</label>
                 <input asp-for="Servings" type="number" id="">
+                <span asp-validation-for="Servings" class="validation-script"></span>
             </div>
 
             <div class="recipe-image-input recipe-column">
                 <label asp-for="Image">Add Image</label>
                 <input asp-for="Image" type="file" id="">
+                <span asp-validation-for="Image" class="validation-script"></span>
             </div>
 
             <button type="submit" class="save-recipe">Add</button>
@@ -48,15 +52,21 @@
             <div class="ingridients-input recipe-column">
                 <label asp-for="AllIngredients">Ingridients</label>
                 <textarea asp-for="AllIngredients" type="text" cols="15" rows="15"></textarea>
+                <span asp-validation-for="AllIngredients" class="validation-script"></span>
             </div>
 
             <div class="directions-input recipe-column">
-                <label asp-for="Instructions">Directions</label>
+                <label asp-for="Instructions">Instructions</label>
                 <textarea asp-for="Instructions" type="text" cols="15" rows="15"></textarea>
+                <span asp-validation-for="Instructions" class="validation-script"></span>
             </div>
         </div>
 
 
     </form>
 </div>
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}
 
