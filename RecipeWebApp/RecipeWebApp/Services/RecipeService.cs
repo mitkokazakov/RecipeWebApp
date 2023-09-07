@@ -52,6 +52,20 @@ namespace RecipeWebApp.Services
             SavePicture(model.Image,image.Id);
         }
 
+        public IEnumerable<RecipeCoverViewModel> GetFirstSixRecipes()
+        {
+            var firstSix = db.Recipies.OrderByDescending(r => r.CreatedOn).Take(6).Select(r => new RecipeCoverViewModel() 
+            {
+                Id = r.Id,
+                Category = r.Category.ToUpper(),
+                Name = r.Name,
+                ImagePath = r.ImageId + r.Image.Extension
+            })
+                .ToList();
+
+            return firstSix;
+        }
+
         private string[] SplitIngredients(string allIngredients) 
         {
             var arr = allIngredients.Split("\r\n\r\n",2);
@@ -76,6 +90,6 @@ namespace RecipeWebApp.Services
 
         }
 
-
+        
     }
 }

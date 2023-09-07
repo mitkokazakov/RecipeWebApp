@@ -10,6 +10,6 @@ namespace RecipeWebApp.Services
     {
         Task AddRecipe(AddRecipeFormSubmit model);
 
-        
+        IEnumerable<RecipeCoverViewModel> GetFirstSixRecipes();
     }
 }
