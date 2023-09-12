@@ -12,6 +12,6 @@ namespace RecipeWebApp.Services
 
         IEnumerable<RecipeCoverViewModel> GetFirstSixRecipes();
 
-        SingleRecipeViewModel DisplayRecipe(string recipeId);
+        SingleRecipeViewModel GetRecipeById(string recipeId);
     }
 }

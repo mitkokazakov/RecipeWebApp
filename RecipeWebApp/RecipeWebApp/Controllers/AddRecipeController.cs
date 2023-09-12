@@ -35,9 +35,9 @@ namespace RecipeWebApp.Controllers
 
         public IActionResult ViewRecipe(string id)
         {
-            recipeService.DisplayRecipe(id);
+            var recipe = recipeService.GetRecipeById(id);
 
-            return View();
+            return View(recipe);
         }
     }
 }

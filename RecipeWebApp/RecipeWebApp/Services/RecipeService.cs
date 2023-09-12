@@ -66,7 +66,7 @@ namespace RecipeWebApp.Services
             return firstSix;
         }
 
-        public SingleRecipeViewModel DisplayRecipe(string recipeId) 
+        public SingleRecipeViewModel GetRecipeById(string recipeId) 
         {
             var searchedRecipe = db.Recipies.FirstOrDefault(r => r.Id == recipeId);
 
