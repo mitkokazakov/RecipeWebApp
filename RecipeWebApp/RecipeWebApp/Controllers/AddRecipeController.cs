@@ -32,5 +32,12 @@ namespace RecipeWebApp.Controllers
             return RedirectToAction("Index","Home");
 
         }
+
+        public IActionResult ViewRecipe(string id)
+        {
+            recipeService.DisplayRecipe(id);
+
+            return View();
+        }
     }
 }

@@ -66,6 +66,25 @@ namespace RecipeWebApp.Services
             return firstSix;
         }
 
+        public SingleRecipeViewModel DisplayRecipe(string recipeId) 
+        {
+            var searchedRecipe = db.Recipies.FirstOrDefault(r => r.Id == recipeId);
+
+            var recipeViewModel = new SingleRecipeViewModel()
+            {
+                Name = searchedRecipe.Name,
+                Category = searchedRecipe.Category,
+                ImagePath = searchedRecipe.ImageId + searchedRecipe.Image.Extension,
+                Ingredients = searchedRecipe.Ingridients,
+                SubIngredients = searchedRecipe.SubIngredients,
+                Instructions = searchedRecipe.Instructions,
+                CookingTime = searchedRecipe.CookingTime,
+                Servings = searchedRecipe.Servings
+            };
+
+            return recipeViewModel;
+        }
+
         private string[] SplitIngredients(string allIngredients) 
         {
             var arr = allIngredients.Split("\r\n\r\n",2);
