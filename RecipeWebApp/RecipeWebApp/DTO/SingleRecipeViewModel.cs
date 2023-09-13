@@ -7,8 +7,9 @@
         public string Category { get; set; } = null!;
         public string ImagePath { get; set; } = null!;
 
-        public string Ingredients { get; set; } = null!;
-        public string SubIngredients { get; set; } = null!;
+        public List<string> Ingredients { get; set; } = null!;
+
+        public List<SubIngredientViewModel> SubIngredients { get; set; } = new List<SubIngredientViewModel>();
         public string Instructions { get; set; } = null!;
         public int CookingTime { get; set; }
         public int Servings { get; set; }
