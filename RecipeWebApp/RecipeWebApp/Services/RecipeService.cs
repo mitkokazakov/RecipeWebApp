@@ -75,8 +75,8 @@ namespace RecipeWebApp.Services
                 Name = searchedRecipe.Name,
                 Category = searchedRecipe.Category,
                 ImagePath = searchedRecipe.ImageId + searchedRecipe.Image.Extension,
-                Ingredients = searchedRecipe.Ingridients,
-                SubIngredients = searchedRecipe.SubIngredients,
+                Ingredients = DetermineSingleIngredient(searchedRecipe.Ingridients),
+                SubIngredients = DetermineSubIngredients(searchedRecipe.SubIngredients),
                 Instructions = searchedRecipe.Instructions,
                 CookingTime = searchedRecipe.CookingTime,
                 Servings = searchedRecipe.Servings
@@ -90,6 +90,40 @@ namespace RecipeWebApp.Services
             var arr = allIngredients.Split("\r\n\r\n",2);
 
             return arr;
+        }
+
+        private List<string> DetermineSingleIngredient(string ingredients) 
+        {
+            var ingredientsList = ingredients.Split("\n").ToList();
+
+            return ingredientsList;
+        }
+
+        private List<SubIngredientViewModel> DetermineSubIngredients(string subIngredients)
+        {
+            if (subIngredients is null)
+            {
+                return null;
+            }
+
+            List<SubIngredientViewModel> list = new List<SubIngredientViewModel>();
+
+            var subIngredientsList = subIngredients.Split("\r\n\r\n").ToList();
+
+            foreach (var subIngredient in subIngredientsList)
+            {
+                SubIngredientViewModel subIngredientModel = new SubIngredientViewModel();
+
+                var ingredientsList = subIngredient.Split("\n").ToList();
+
+                subIngredientModel.Name = ingredientsList[0];
+
+                subIngredientModel.Ingredients = DetermineSingleIngredient(subIngredient).Skip(1).ToList();
+
+                list.Add(subIngredientModel);
+            }
+
+            return list;
         }
 
         private void SavePicture(IFormFile image, string pictureName)

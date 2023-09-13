@@ -20,61 +20,39 @@
                 <h3>Ingredients</h3>
             </div>
 
-            <ul>
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
+            <ul class="single-recipe-ingredients-list">
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
-
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
+                @foreach (var ingredient in Model.Ingredients)
+                {
+                    <li>
+                        <i class="fa-solid fa-circle"></i>
+                        <p>@ingredient</p>
+                    </li>
+                }
             </ul>
 
-            <ul>
-                <p class="sub-ingridients-name">For the cream</p>
+            @if (Model.SubIngredients != null)
+            {
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
+                @foreach (var subIngredient in Model.SubIngredients)
+                {
+                    <ul class="single-recipe-ingredients-list">
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
+                        <p class="sub-ingridients-name">@subIngredient.Name</p>
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
+                        @foreach (var ingr in subIngredient.Ingredients)
+                        {
+                        <li>
+                            <i class="fa-solid fa-circle"></i>
+                            <p>@ingr</p>
+                        </li>
+                        }
+                    </ul>
+                }
+            }
 
-                <li>
-                    <i class="fa-solid fa-circle"></i>
-                    <p>200 gr Chicken breasts</p>
-                </li>
-            </ul>
+
 
         </div>
     </div>
