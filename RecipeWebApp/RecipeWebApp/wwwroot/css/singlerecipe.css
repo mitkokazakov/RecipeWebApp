@@ -1,6 +1,7 @@
 ﻿.single-recipe {
     width: 100%;
     display: flex;
+    position:relative;
 }
 
 .single-recipe-left,
@@ -162,9 +163,23 @@
             /* border-bottom: 1px solid black; */
         }
 
-@media screen and (max-width: 980px) {
-   
+.change-btn-wrapper {
+    position: relative;
+    margin-top: 50px;
+}
 
+.change-recipe-btn {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #E87766;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 980px) {
     .single-recipe {
         flex-direction: column;
     }
