@@ -39,5 +39,12 @@ namespace RecipeWebApp.Controllers
 
             return View(recipe);
         }
+
+        public IActionResult Change(string id)
+        {
+            var recipe = recipeService.RetrieveInfoForChangeRecipe(id);
+
+            return View(recipe);
+        }
     }
 }

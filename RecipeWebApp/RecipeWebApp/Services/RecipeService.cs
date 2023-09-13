@@ -72,6 +72,7 @@ namespace RecipeWebApp.Services
 
             var recipeViewModel = new SingleRecipeViewModel()
             {
+                Id = searchedRecipe.Id,
                 Name = searchedRecipe.Name,
                 Category = searchedRecipe.Category,
                 ImagePath = searchedRecipe.ImageId + searchedRecipe.Image.Extension,
@@ -83,6 +84,29 @@ namespace RecipeWebApp.Services
             };
 
             return recipeViewModel;
+        }
+
+        public ChangeRecipeDisplayInfo RetrieveInfoForChangeRecipe(string recipeId) 
+        {
+            var searchedRecipe = db.Recipies.FirstOrDefault(r => r.Id == recipeId);
+
+            var recipeForChange = new ChangeRecipeDisplayInfo()
+            {
+                Id = searchedRecipe.Id,
+                Name = searchedRecipe.Name,
+                CookingTime = searchedRecipe.CookingTime,
+                Category = searchedRecipe.Category,
+                AllIngredients = searchedRecipe.Ingridients,
+                Instructions = searchedRecipe.Instructions,
+                Servings = searchedRecipe.Servings
+            };
+
+            if (searchedRecipe.SubIngredients != null)
+            {
+                recipeForChange.AllIngredients += "\n\n" + searchedRecipe.SubIngredients;
+            }
+
+            return recipeForChange;
         }
 
         private string[] SplitIngredients(string allIngredients) 

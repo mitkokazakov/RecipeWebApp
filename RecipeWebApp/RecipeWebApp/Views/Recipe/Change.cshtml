@@ -1,18 +1,18 @@
-﻿@model AddRecipeFormSubmit
+﻿@model ChangeRecipeDisplayInfo
 
 <link rel="stylesheet" href="~/css/addrecipe.css" asp-append-version="true" />
 
 <div class="add-recipe">
-    <h1>Add Recipe</h1>
+    <h1>Change Recipe</h1>
 
-    <form asp-controller="Recipe" asp-action="Add" enctype="multipart/form-data" method="post">
+    <form asp-controller="Recipe" asp-action="Change" enctype="multipart/form-data" method="post">
 
         <div class="add-recipe-info">
 
             <div class="recipe-name-input recipe-column">
-                <label asp-for="RecipeName">Recipe Name</label>
-                <input asp-for="RecipeName" type="text" placeholder="Name">
-                <span asp-validation-for="RecipeName" class="validation-script"></span>
+                <label asp-for="Name">Recipe Name</label>
+                <input asp-for="Name" type="text" placeholder="Name">
+                <span asp-validation-for="Name" class="validation-script"></span>
             </div>
 
             <div class="recipe-category-input recipe-column">
@@ -43,7 +43,7 @@
                 <span asp-validation-for="Image" class="validation-script"></span>
             </div>
 
-            <button type="submit" class="save-recipe">Add</button>
+            <button type="submit" class="save-recipe">Change</button>
 
         </div>
 

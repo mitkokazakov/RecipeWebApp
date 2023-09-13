@@ -13,5 +13,7 @@ namespace RecipeWebApp.Services
         IEnumerable<RecipeCoverViewModel> GetFirstSixRecipes();
 
         SingleRecipeViewModel GetRecipeById(string recipeId);
+
+        ChangeRecipeDisplayInfo RetrieveInfoForChangeRecipe(string recipeId);
     }
 }
