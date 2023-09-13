@@ -37,7 +37,7 @@
                     {
 
                         <div class="recipe-small" style="background-image: url('./recipes/@recipe.ImagePath');">
-                            <a asp-controller="AddRecipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
+                            <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                 <div class="recent-recipes-heading">
                                     <p class="recent-recipes-category">@recipe.Category</p>
                                     <h3 class="recent-recipes-name">@recipe.Name</h3>
@@ -52,7 +52,7 @@
                     foreach (var recipe in firstThree.Skip(2))
                     {
                         <div class="recipe-large" style="background-image: url('./recipes/@recipe.ImagePath');">
-                            <a asp-controller="AddRecipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
+                            <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                 <div class="recent-recipes-heading">
                                     <p class="recent-recipes-category">@recipe.Category</p>
                                     <h3 class="recent-recipes-name">@recipe.Name</h3>
@@ -75,7 +75,7 @@
                         foreach (var recipe in lastRecipes.Take(1))
                         {
                             <div class="recipe-large" style="background-image: url('./recipes/@recipe.ImagePath');">
-                                <a asp-controller="AddRecipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
+                                <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                     <div class="recent-recipes-heading">
                                         <p class="recent-recipes-category">@recipe.Category</p>
                                         <h3 class="recent-recipes-name">@recipe.Name</h3>
@@ -89,7 +89,7 @@
                         foreach (var recipe in lastRecipes.Skip(1))
                         {
                             <div class="recipe-small" style="background-image: url('./recipes/@recipe.ImagePath');">
-                                <a asp-controller="AddRecipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
+                                <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                     <div class="recent-recipes-heading">
                                         <p class="recent-recipes-category">@recipe.Category</p>
                                         <h3 class="recent-recipes-name">@recipe.Name</h3>
@@ -105,52 +105,6 @@
             }
         }
 
-        @* <div class="recent-recipes-first">
-        <div class="recipe-small" style="background-image: url('./images/carrotcake.jpg');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fluffy cake with lemon and berries, orange, sauce and oil</h3>
-        </div>
-        </div>
-
-        <div class="recipe-small" style="background-image: url('./images/cake.jpg');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
-        </div>
-        </div>
-
-        <div class="recipe-large" style="background-image: url('./images/mishmash.jpg');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fluffy cake with lemon, fresh lemon and cream</h3>
-        </div>
-        </div>
-        </div>
-
-        <div class="recent-recipes-second">
-        <div class="recipe-large" style="background-image: url('./images/cake.jpg');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
-        </div>
-        </div>
-
-        <div class="recipe-small" style="background-image: url('./images/bob.png');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fried bacon with honey and mustard</h3>
-        </div>
-        </div>
-
-        <div class="recipe-small" style="background-image: url('./images/cake.jpg');">
-        <div class="recent-recipes-heading">
-        <p class="recent-recipes-category">MAIN DISH</p>
-        <h3 class="recent-recipes-name">Fluffy cake with lemon</h3>
-        </div>
-        </div>
-
-
-        </div>*@
+       
     </div>
 </div>

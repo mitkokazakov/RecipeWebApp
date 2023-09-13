@@ -4,11 +4,11 @@ using RecipeWebApp.Services;
 
 namespace RecipeWebApp.Controllers
 {
-    public class AddRecipeController : Controller
+    public class RecipeController : Controller
     {
         private readonly IRecipeService recipeService;
 
-        public AddRecipeController(IRecipeService recipeService)
+        public RecipeController(IRecipeService recipeService)
         {
             this.recipeService = recipeService;
         }
