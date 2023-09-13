@@ -70,7 +70,7 @@
 
                 <div class="recent-recipes-second">
 
-                    @if (lastRecipes.Count() == 1)
+                    @if (lastRecipes.Count() >= 1)
                     {
                         foreach (var recipe in lastRecipes.Take(1))
                         {
