@@ -1,6 +1,7 @@
 ﻿using RecipeWebApp.DTO;
 using RecipeWebApp.Data.Models;
 using RecipeWebApp.Data;
+using System.Runtime.CompilerServices;
 
 namespace RecipeWebApp.Services
 {
@@ -54,7 +55,7 @@ namespace RecipeWebApp.Services
 
         public IEnumerable<RecipeCoverViewModel> GetFirstSixRecipes()
         {
-            var firstSix = db.Recipies.OrderByDescending(r => r.CreatedOn).Take(6).Select(r => new RecipeCoverViewModel() 
+            var firstSix = db.Recipies.Where(r => r.IsDeleted == false).OrderByDescending(r => r.CreatedOn).Take(6).Select(r => new RecipeCoverViewModel() 
             {
                 Id = r.Id,
                 Category = r.Category.ToUpper(),
@@ -146,6 +147,15 @@ namespace RecipeWebApp.Services
 
                 SavePicture(model.Image, image.Id);
             }
+
+            await db.SaveChangesAsync();
+        }
+
+        public async Task DeleteRecipe(string recipeId) 
+        {
+            var currentRecipe = db.Recipies.FirstOrDefault(r => r.Id == recipeId);
+
+            currentRecipe.IsDeleted = true;
 
             await db.SaveChangesAsync();
         }

@@ -17,5 +17,7 @@ namespace RecipeWebApp.Services
         ChangeRecipeDisplayInfo RetrieveInfoForChangeRecipe(string recipeId);
 
         Task ChangeRecipe(string recipeId, ChangeRecipeFormModel model);
+
+        Task DeleteRecipe(string id);
     }
 }

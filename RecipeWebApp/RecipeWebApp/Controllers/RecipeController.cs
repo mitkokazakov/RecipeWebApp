@@ -54,5 +54,12 @@ namespace RecipeWebApp.Controllers
 
             return RedirectToAction("ViewRecipe", new { id = id});
         }
+
+        public async Task<IActionResult> Delete(string id) 
+        {
+            await this.recipeService.DeleteRecipe(id);
+
+            return RedirectToAction("Index","Home");
+        }
     }
 }

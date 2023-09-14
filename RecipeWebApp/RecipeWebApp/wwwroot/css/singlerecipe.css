@@ -166,17 +166,34 @@
 .change-btn-wrapper {
     position: relative;
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
 }
 
 .change-recipe-btn {
-    position: absolute;
+    /*position: absolute;*/
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: #E87766;
-    left: 50%;
-    transform: translateX(-50%);
+    letter-spacing: 2px;
+    /*left: 50%;
+    transform: translateX(-50%);*/
+}
+
+.delete-recipe-btn {
+    /*position: absolute;*/
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: darkred;
+    letter-spacing: 2px;
+    /*left: 50%;
+    transform: translateX(-50%);*/
 }
 
 @media screen and (max-width: 980px) {
@@ -223,5 +240,9 @@
 
     .single-recipe-category {
         width: 100%;
+    }
+
+    .change-btn-wrapper {
+        flex-direction: column;
     }
 }
