@@ -46,5 +46,13 @@ namespace RecipeWebApp.Controllers
 
             return View(recipe);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Change(string id, ChangeRecipeFormModel model) 
+        {
+            await this.recipeService.ChangeRecipe(id, model);
+
+            return RedirectToAction("ViewRecipe", new { id = id});
+        }
     }
 }

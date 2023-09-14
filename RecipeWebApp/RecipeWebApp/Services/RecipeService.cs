@@ -109,6 +109,47 @@ namespace RecipeWebApp.Services
             return recipeForChange;
         }
 
+        public async Task ChangeRecipe(string recipeId, ChangeRecipeFormModel model) 
+        {
+            var currentRecipe = db.Recipies.FirstOrDefault(r => r.Id == recipeId);
+
+            var ingredientsArray = SplitIngredients(model.AllIngredients);
+
+            currentRecipe.Name = model.Name;
+            currentRecipe.Category = model.Category;
+            currentRecipe.CookingTime = model.CookingTime;
+            currentRecipe.Servings = model.Servings;
+            currentRecipe.Instructions = model.Instructions;
+            currentRecipe.Ingridients = ingredientsArray[0];
+
+            if (ingredientsArray.Count() > 1)
+            {
+                currentRecipe.SubIngredients = ingredientsArray[1];
+            }
+
+            if (model.Image != null)
+            {
+                var imageToDelete = db.Images.FirstOrDefault(i => i.RecipeId == recipeId);
+
+                db.Images.Remove(imageToDelete);
+
+                string extension = Path.GetExtension(model.Image.FileName);
+
+                Image image = new Image()
+                {
+                    Name = Guid.NewGuid().ToString(),
+                    Extension = extension
+                };
+
+                currentRecipe.Image = image;
+                currentRecipe.ImageId = image.Id;
+
+                SavePicture(model.Image, image.Id);
+            }
+
+            await db.SaveChangesAsync();
+        }
+
         private string[] SplitIngredients(string allIngredients) 
         {
             var arr = allIngredients.Split("\r\n\r\n",2);

@@ -15,5 +15,7 @@ namespace RecipeWebApp.Services
         SingleRecipeViewModel GetRecipeById(string recipeId);
 
         ChangeRecipeDisplayInfo RetrieveInfoForChangeRecipe(string recipeId);
+
+        Task ChangeRecipe(string recipeId, ChangeRecipeFormModel model);
     }
 }
