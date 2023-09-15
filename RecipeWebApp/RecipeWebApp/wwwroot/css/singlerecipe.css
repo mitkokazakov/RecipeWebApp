@@ -185,15 +185,79 @@
 }
 
 .delete-recipe-btn {
-    /*position: absolute;*/
     text-decoration: none;
     color: white;
     padding: 10px 20px;
     border-radius: 10px;
     background-color: darkred;
     letter-spacing: 2px;
-    /*left: 50%;
-    transform: translateX(-50%);*/
+    cursor:pointer;
+}
+
+.popup-delete {
+    position: fixed;
+    min-width: 45%;
+    min-height: 35%;
+    background-color: white;
+    border: 1px solid darkred;
+    border-radius: 20px;
+    z-index: 4;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%,50%) scale(1.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 40px 30px;
+    /*scale: 1.3;*/
+    transition: all 500ms ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+    .popup-delete.open {
+        opacity: 1;
+        /*z-index: 4;*/
+        transform: translate(-50%,50%) scale(1);
+        pointer-events: auto;
+    }
+
+.warning-icon {
+    font-size:50px;
+    color: darkred;
+}
+
+.popup-delete-heading {
+    color: darkred;
+}
+
+.popup-delete-info {
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
+.popup-delete-btns {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap: 20px;
+}
+
+.confirm-delete {
+    padding: 10px 30px;
+    color: white;
+    background-color:darkred;
+    border-radius: 20px;
+}
+
+.close-delete-popup {
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid darkred;
+    cursor:pointer;
 }
 
 @media screen and (max-width: 980px) {
