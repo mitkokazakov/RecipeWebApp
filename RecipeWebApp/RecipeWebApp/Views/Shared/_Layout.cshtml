@@ -118,6 +118,21 @@
 
     <div class="container">
         <main role="main">
+
+            @if (TempData.ContainsKey("Success"))
+            {
+                <div class="success-modale">
+                    <i class="fa-solid fa-circle-check success-icon"></i>
+                    <h1 class="success-modale-heading">Success</h1>
+                    <p class="success-modale-info">@TempData["Success"]</p>
+
+                    <div class="success-modale-btns">
+                        <a class="success-modale-close">Close</a>
+                    </div>
+                </div>
+            }
+
+
             @RenderBody()
         </main>
     </div>

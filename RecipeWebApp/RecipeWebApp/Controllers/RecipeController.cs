@@ -29,6 +29,8 @@ namespace RecipeWebApp.Controllers
 
             await recipeService.AddRecipe(model);
 
+            TempData["Success"] = "Recipe has been added successfully!";
+
             return RedirectToAction("Index","Home");
 
         }

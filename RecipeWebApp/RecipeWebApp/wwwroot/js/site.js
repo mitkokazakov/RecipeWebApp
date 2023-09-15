@@ -23,7 +23,6 @@ let popupDeleteModal = document.querySelector('.popup-delete');
 
 function onClickDeleteRecipeBtn()
 {
-    console.log('ok');
     if (!popupDeleteModal.classList.contains('open')) {
         popupDeleteModal.classList.add('open');
     }
@@ -35,7 +34,31 @@ function onClickCloseModalBtn() {
     }
 }
 
-deleteRecipeBtn.addEventListener('click', onClickDeleteRecipeBtn);
-closeDeletePopupBtn.addEventListener('click', onClickCloseModalBtn);
+if (deleteRecipeBtn != null) {
+    deleteRecipeBtn.addEventListener('click', onClickDeleteRecipeBtn);
+}
+
+if (closeDeletePopupBtn != null) {
+    closeDeletePopupBtn.addEventListener('click', onClickCloseModalBtn);
+}
+
+
+let successModaleCloseBtn = document.querySelector('.success-modale-close');
+let successModale = document.querySelector('.success-modale');
+
+function onClickCloseBtnSuccessModale()
+{
+
+    successModale.classList.remove('close');
+
+    if (!successModale.classList.contains('close')) {
+        successModale.classList.add('close');
+    }
+}
+
+if (successModaleCloseBtn != null) {
+    successModaleCloseBtn.addEventListener('click', onClickCloseBtnSuccessModale);
+}
+
 
 
