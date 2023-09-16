@@ -63,5 +63,10 @@ namespace RecipeWebApp.Controllers
 
             return RedirectToAction("Index","Home");
         }
+
+        public IActionResult RecipeByCategory() 
+        {
+            return View();
+        }
     }
 }
