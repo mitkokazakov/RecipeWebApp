@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="~/css/recipecategory.css" asp-append-version="true" />
 
-<h1 class="recipes-category-heading">@ViewBag.CurrentCategory</h1>
+<h1 class="recipes-category-heading">@ViewBag.CurrentCategory.ToUpper()</h1>
 
 <div class="recipes-by-category">
 
@@ -25,7 +25,7 @@
 
                     <div class="single-recipe-category-icon-holder">
                         <i class="fa-regular fa-clock"></i>
-                        <p>@recipe.CookingTime minutes</p>
+                        <p>@recipe.CookingTime min</p>
                     </div>
 
                     <div class="single-recipe-category-icon-holder">

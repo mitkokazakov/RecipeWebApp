@@ -35,7 +35,7 @@ namespace RecipeWebApp.Services
                 Instructions = model.Instructions,
                 Image = image,
                 ImageId = image.Id,
-                Category = model.Category,
+                Category = CapitalizeOnlyFirstLetterOfCategoryName(model.Category),
                 CookingTime = model.CookingTime,
                 Servings = model.Servings,
                 CreatedOn = DateTime.UtcNow,
@@ -75,7 +75,7 @@ namespace RecipeWebApp.Services
             {
                 Id = searchedRecipe.Id,
                 Name = searchedRecipe.Name,
-                Category = searchedRecipe.Category,
+                Category = CapitalizeOnlyFirstLetterOfCategoryName(searchedRecipe.Category),
                 ImagePath = searchedRecipe.ImageId + searchedRecipe.Image.Extension,
                 Ingredients = DetermineSingleIngredient(searchedRecipe.Ingridients),
                 SubIngredients = DetermineSubIngredients(searchedRecipe.SubIngredients),
@@ -96,7 +96,7 @@ namespace RecipeWebApp.Services
                 Id = searchedRecipe.Id,
                 Name = searchedRecipe.Name,
                 CookingTime = searchedRecipe.CookingTime,
-                Category = searchedRecipe.Category,
+                Category = CapitalizeOnlyFirstLetterOfCategoryName(searchedRecipe.Category),
                 AllIngredients = searchedRecipe.Ingridients,
                 Instructions = searchedRecipe.Instructions,
                 Servings = searchedRecipe.Servings
@@ -117,7 +117,7 @@ namespace RecipeWebApp.Services
             var ingredientsArray = SplitIngredients(model.AllIngredients);
 
             currentRecipe.Name = model.Name;
-            currentRecipe.Category = model.Category;
+            currentRecipe.Category = CapitalizeOnlyFirstLetterOfCategoryName(model.Category);
             currentRecipe.CookingTime = model.CookingTime;
             currentRecipe.Servings = model.Servings;
             currentRecipe.Instructions = model.Instructions;
@@ -166,7 +166,7 @@ namespace RecipeWebApp.Services
             {
                 Id = r.Id,
                 Name = r.Name,
-                Category = r.Category,
+                Category = r.Category.ToUpper(),
                 Servings = r.Servings,
                 CookingTime = r.CookingTime,
                 ImagePath = r.ImageId + r.Image.Extension,
@@ -232,6 +232,13 @@ namespace RecipeWebApp.Services
                 image.CopyTo(fileStream);
             }
 
+        }
+
+        private string CapitalizeOnlyFirstLetterOfCategoryName(string category) 
+        {
+            var result = char.ToUpper(category[0]) + category.Substring(1);
+
+            return result;
         }
 
         
