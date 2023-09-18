@@ -19,5 +19,7 @@ namespace RecipeWebApp.Services
         Task ChangeRecipe(string recipeId, ChangeRecipeFormModel model);
 
         Task DeleteRecipe(string id);
+
+        IEnumerable<SingleRecipeViewModel> GetRecipesByCategory(string category);
     }
 }

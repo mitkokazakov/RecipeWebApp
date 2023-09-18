@@ -19,48 +19,56 @@
             <li>
                 <a asp-controller="Recipe" asp-action="Add">
                     <div class="icon-wrapper">
-                    <img src="~/images/addicon.png" alt="">
-                </div>
-                <p>ADD RECIPE</p>
+                        <img src="~/images/addicon.png" alt="">
+                    </div>
+                    <p>ADD RECIPE</p>
                 </a>
 
             </li>
 
             <li>
-                <a asp-controller="Recipe" asp-action="RecipeByCategory">
-                <div class="icon-wrapper">
-                    <img src="~/images/dish.png" alt="">
-                </div>
-                <p>MAIN DISH</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="maindish">
+                    <div class="icon-wrapper">
+                        <img src="~/images/dish.png" alt="">
+                    </div>
+                    <p>MAIN DISH</p>
                 </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/salad1.png" alt="">
-                </div>
-                <p>SALADS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="salads">
+                    <div class="icon-wrapper">
+                        <img src="~/images/salad1.png" alt="">
+                    </div>
+                    <p>SALADS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/cake.png" alt="">
-                </div>
-                <p>DESERTS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="deserts">
+                    <div class="icon-wrapper">
+                        <img src="~/images/cake.png" alt="">
+                    </div>
+                    <p>DESERTS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/dough.png" alt="">
-                </div>
-                <p>PASTAS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="pastas">
+                    <div class="icon-wrapper">
+                        <img src="~/images/dough.png" alt="">
+                    </div>
+                    <p>PASTAS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/soup.png" alt="">
-                </div>
-                <p>SOUPS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="soups">
+                    <div class="icon-wrapper">
+                        <img src="~/images/soup.png" alt="">
+                    </div>
+                    <p>SOUPS</p>
+                </a>
             </li>
         </ul>
 
@@ -82,38 +90,48 @@
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/dish.png" alt="">
-                </div>
-                <p>MAIN DISH</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="maindish">
+                    <div class="icon-wrapper">
+                        <img src="~/images/dish.png" alt="">
+                    </div>
+                    <p>MAIN DISH</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/salad1.png" alt="">
-                </div>
-                <p>SALADS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="salads">
+                    <div class="icon-wrapper">
+                        <img src="~/images/salad1.png" alt="">
+                    </div>
+                    <p>SALADS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/cake.png" alt="">
-                </div>
-                <p>DESERTS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="deserts">
+                    <div class="icon-wrapper">
+                        <img src="~/images/cake.png" alt="">
+                    </div>
+                    <p>DESERTS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/dough.png" alt="">
-                </div>
-                <p>PASTAS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="pastas">
+                    <div class="icon-wrapper">
+                        <img src="~/images/dough.png" alt="">
+                    </div>
+                    <p>PASTAS</p>
+                </a>
             </li>
 
             <li>
-                <div class="icon-wrapper">
-                    <img src="~/images/soup.png" alt="">
-                </div>
-                <p>SOUPS</p>
+                <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="soups">
+                    <div class="icon-wrapper">
+                        <img src="~/images/soup.png" alt="">
+                    </div>
+                    <p>SOUPS</p>
+                </a>
             </li>
         </ul>
     </div>
@@ -123,15 +141,15 @@
 
             @if (TempData.ContainsKey("Success"))
             {
-                    <div class="success-modale">
-                        <i class="fa-solid fa-circle-check success-icon"></i>
-                        <h1 class="success-modale-heading">Success</h1>
-                        <p class="success-modale-info">@TempData["Success"]</p>
+                <div class="success-modale">
+                    <i class="fa-solid fa-circle-check success-icon"></i>
+                    <h1 class="success-modale-heading">Success</h1>
+                    <p class="success-modale-info">@TempData["Success"]</p>
 
-                        <div class="success-modale-btns">
-                            <a class="success-modale-close">Close</a>
-                        </div>
+                    <div class="success-modale-btns">
+                        <a class="success-modale-close">Close</a>
                     </div>
+                </div>
             }
 
 

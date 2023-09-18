@@ -64,9 +64,13 @@ namespace RecipeWebApp.Controllers
             return RedirectToAction("Index","Home");
         }
 
-        public IActionResult RecipeByCategory() 
+        public IActionResult RecipeByCategory(string id) 
         {
-            return View();
+            ViewBag.CurrentCategory = id;
+
+            var recipes = recipeService.GetRecipesByCategory(id);
+
+            return View(recipes);
         }
     }
 }

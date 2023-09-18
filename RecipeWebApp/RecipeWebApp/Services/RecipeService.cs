@@ -160,6 +160,22 @@ namespace RecipeWebApp.Services
             await db.SaveChangesAsync();
         }
 
+        public IEnumerable<SingleRecipeViewModel> GetRecipesByCategory(string catergory) 
+        {
+            var recipes = db.Recipies.Where(r => r.Category.ToLower() == catergory.ToLower()).OrderByDescending(r => r.CreatedOn).Select(r => new SingleRecipeViewModel() 
+            {
+                Id = r.Id,
+                Name = r.Name,
+                Category = r.Category,
+                Servings = r.Servings,
+                CookingTime = r.CookingTime,
+                ImagePath = r.ImageId + r.Image.Extension,
+            }
+            ).ToList();
+
+            return recipes;
+        }
+
         private string[] SplitIngredients(string allIngredients) 
         {
             var arr = allIngredients.Split("\r\n\r\n",2);

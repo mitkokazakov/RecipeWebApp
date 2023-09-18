@@ -1,130 +1,48 @@
-﻿<link rel="stylesheet" href="~/css/recipecategory.css" asp-append-version="true" />
+﻿@model IEnumerable<SingleRecipeViewModel>
+
+<link rel="stylesheet" href="~/css/recipecategory.css" asp-append-version="true" />
+
+<h1 class="recipes-category-heading">@ViewBag.CurrentCategory</h1>
 
 <div class="recipes-by-category">
 
-    <div class="single-recipe-category">
+    @if (@Model.Count() > 0)
+    {
+        @foreach (var recipe in Model)
+        {
+            <div class="single-recipe-category">
 
-        <div class="single-recipe-category-img-wrapper">
-            <img src="~/images/carrotcake.jpg"/>
-        </div>
+                <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
+                    <div class="single-recipe-category-img-wrapper">
+                        <img src="~/recipes/@recipe.ImagePath" />
+                    </div>
+                </a>
+                <h4 class="single-recipe-category-category">@recipe.Category</h4>
 
-        <h4 class="single-recipe-category-category">MAIN DISH</h4>
+                <h3 class="single-recipe-category-title">@recipe.Name</h3>
 
-        <h3 class="single-recipe-category-title">Carrot cake with vanilla</h3>
+                <div class="single-recipe-category-info">
 
-        <div class="single-recipe-category-info">
+                    <div class="single-recipe-category-icon-holder">
+                        <i class="fa-regular fa-clock"></i>
+                        <p>@recipe.CookingTime minutes</p>
+                    </div>
 
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-regular fa-clock"></i>
-                <p>60 minutes</p>
+                    <div class="single-recipe-category-icon-holder">
+                        <i class="fa-solid fa-utensils"></i>
+                        <p>@recipe.Servings</p>
+                    </div>
+                </div>
+
             </div>
+        }
+    }
+    else
+    {
+        <h1 class="recipes-category-heading">There are no recipes in this category! Sorry.</h1>
+    }
+    
 
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-solid fa-utensils"></i>
-                <p>5</p>
-            </div>
-        </div>
 
-    </div>
-
-    <div class="single-recipe-category">
-
-        <div class="single-recipe-category-img-wrapper">
-            <img src="~/images/carrotcake.jpg"/>
-        </div>
-
-        <h4 class="single-recipe-category-category">MAIN DISH</h4>
-
-        <h3 class="single-recipe-category-title">Carrot cake with vanilla</h3>
-
-        <div class="single-recipe-category-info">
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-regular fa-clock"></i>
-                <p>60 minutes</p>
-            </div>
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-solid fa-utensils"></i>
-                <p>5</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="single-recipe-category">
-
-        <div class="single-recipe-category-img-wrapper">
-            <img src="~/images/carrotcake.jpg"/>
-        </div>
-
-        <h4 class="single-recipe-category-category">MAIN DISH</h4>
-
-        <h3 class="single-recipe-category-title">Carrot cake with vanilla</h3>
-
-        <div class="single-recipe-category-info">
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-regular fa-clock"></i>
-                <p>60 minutes</p>
-            </div>
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-solid fa-utensils"></i>
-                <p>5</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="single-recipe-category">
-
-        <div class="single-recipe-category-img-wrapper">
-            <img src="~/images/carrotcake.jpg"/>
-        </div>
-
-        <h4 class="single-recipe-category-category">MAIN DISH</h4>
-
-        <h3 class="single-recipe-category-title">Carrot cake with vanilla</h3>
-
-        <div class="single-recipe-category-info">
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-regular fa-clock"></i>
-                <p>60 minutes</p>
-            </div>
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-solid fa-utensils"></i>
-                <p>5</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="single-recipe-category">
-
-        <div class="single-recipe-category-img-wrapper">
-            <img src="~/images/carrotcake.jpg"/>
-        </div>
-
-        <h4 class="single-recipe-category-category">MAIN DISH</h4>
-
-        <h3 class="single-recipe-category-title">Carrot cake with vanilla</h3>
-
-        <div class="single-recipe-category-info">
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-regular fa-clock"></i>
-                <p>60 minutes</p>
-            </div>
-
-            <div class="single-recipe-category-icon-holder">
-                <i class="fa-solid fa-utensils"></i>
-                <p>5</p>
-            </div>
-        </div>
-
-    </div>
 
 </div>
