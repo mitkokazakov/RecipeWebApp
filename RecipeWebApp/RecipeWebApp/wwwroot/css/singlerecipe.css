@@ -194,6 +194,8 @@
     cursor:pointer;
 }
 
+
+
 .popup-delete {
     position: fixed;
     min-width: 45%;
@@ -216,6 +218,17 @@
     opacity: 0;
     pointer-events: none;
 }
+
+    .popup-delete:before {
+        content: '';
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        z-index: -8;
+        background-color: transparent;
+        backdrop-filter: blur(10px);
+        transition: all 500ms ease;
+    }
 
     .popup-delete.open {
         opacity: 1;

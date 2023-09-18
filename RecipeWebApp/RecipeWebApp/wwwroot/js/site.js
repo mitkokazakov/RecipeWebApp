@@ -21,16 +21,22 @@ let confirmDeleteBtn = document.querySelector('.confirm-delete');
 let closeDeletePopupBtn = document.querySelector('.close-delete-popup');
 let popupDeleteModal = document.querySelector('.popup-delete');
 
+let body = document.querySelector('.container');
+
 function onClickDeleteRecipeBtn()
 {
     if (!popupDeleteModal.classList.contains('open')) {
         popupDeleteModal.classList.add('open');
+        //body.style.zIndex = '-10';
+        //body.style.filter = 'blur(10px)';
     }
 }
 
 function onClickCloseModalBtn() {
     if (popupDeleteModal.classList.contains('open')) {
         popupDeleteModal.classList.remove('open');
+        //body.style.zIndex = '1';
+        //body.style.filter = 'blur(0px)';
     }
 }
 
