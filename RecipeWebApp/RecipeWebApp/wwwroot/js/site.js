@@ -20,6 +20,7 @@ let deleteRecipeBtn = document.querySelector('.delete-recipe-btn');
 let confirmDeleteBtn = document.querySelector('.confirm-delete');
 let closeDeletePopupBtn = document.querySelector('.close-delete-popup');
 let popupDeleteModal = document.querySelector('.popup-delete');
+let changeDeleteBtnsContainer = document.querySelector('.change-btn-wrapper');
 
 let body = document.querySelector('.container');
 
@@ -27,16 +28,14 @@ function onClickDeleteRecipeBtn()
 {
     if (!popupDeleteModal.classList.contains('open')) {
         popupDeleteModal.classList.add('open');
-        //body.style.zIndex = '-10';
-        //body.style.filter = 'blur(10px)';
+        changeDeleteBtnsContainer.style.pointerEvents = 'none';
     }
 }
 
 function onClickCloseModalBtn() {
     if (popupDeleteModal.classList.contains('open')) {
         popupDeleteModal.classList.remove('open');
-        //body.style.zIndex = '1';
-        //body.style.filter = 'blur(0px)';
+        changeDeleteBtnsContainer.style.pointerEvents = 'auto';
     }
 }
 
