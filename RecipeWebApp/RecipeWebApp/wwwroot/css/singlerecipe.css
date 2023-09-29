@@ -85,13 +85,17 @@
         font-size: 20px;
     }
 
-.directions-header,
-.ingredients-header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px;
+.single-recipe-directions {
+    padding-top: 20px;
 }
+
+    .directions-header,
+    .ingredients-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+    }
 
 .ingredients-icon-wrapper,
 .directions-icon-wrapper {

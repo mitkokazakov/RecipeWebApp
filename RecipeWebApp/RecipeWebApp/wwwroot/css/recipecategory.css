@@ -94,6 +94,10 @@
 }
 
 @media screen and (max-width: 480px) {
+    .recipes-by-category {
+        gap:50px;
+    }
+
     .single-recipe-category {
         width: 100%;
     }
