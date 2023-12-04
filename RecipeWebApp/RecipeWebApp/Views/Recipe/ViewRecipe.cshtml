@@ -2,6 +2,18 @@
 
 <link rel="stylesheet" href="~/css/singlerecipe.css" asp-append-version="true" />
 
+@{
+    Dictionary<string, string> categoryRepresent = new Dictionary<string, string>
+    {
+        {"maindish", "Основни"},
+        {"salads", "Салати"},
+        {"deserts", "Десерти"},
+        {"dough", "Тестени"},
+        {"soups", "Супи"},
+    };
+
+    string currentCategory = categoryRepresent[Model.Category.ToLower()];
+}
 
 <div class="single-recipe">
     <div class="single-recipe-left">
@@ -17,7 +29,7 @@
                 <div class="ingredients-icon-wrapper">
                     <img src="~/images/eeeee.png" alt="">
                 </div>
-                <h3>Ingredients</h3>
+                <h3>Продукти</h3>
             </div>
 
             <ul class="single-recipe-ingredients-list">
@@ -72,7 +84,7 @@
                 </li>
                 <li>
                     <i class="fa-solid fa-plate-wheat"></i>
-                    <p>@Model.Category</p>
+                    <p>@currentCategory</p>
                 </li>
             </ul>
         </div>
@@ -83,7 +95,7 @@
                 <div class="directions-icon-wrapper">
                     <img src="~/images/ffff.png" alt="">
                 </div>
-                <h3>Directions</h3>
+                <h3>Упътвания</h3>
             </div>
 
             <p>@Model.Instructions</p>
@@ -95,9 +107,9 @@
 </div>
 
 <div class="change-btn-wrapper">
-    <a asp-controller="Recipe" asp-action="Change" asp-route-id="@Model.Id" class="change-recipe-btn">Change Recipe</a>
+    <a asp-controller="Recipe" asp-action="Change" asp-route-id="@Model.Id" class="change-recipe-btn">Промени</a>
 
-    <a class="delete-recipe-btn">Delete Recipe</a>
+    <a class="delete-recipe-btn">Изтрий</a>
 </div>
 
 
