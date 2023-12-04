@@ -3,20 +3,20 @@
 <link rel="stylesheet" href="~/css/addrecipe.css" asp-append-version="true" />
 
 <div class="add-recipe">
-    <h1>Change Recipe</h1>
+    <h1>Промени Рецепта</h1>
 
     <form asp-controller="Recipe" asp-action="Change" enctype="multipart/form-data" method="post">
 
         <div class="add-recipe-info">
 
             <div class="recipe-name-input recipe-column">
-                <label asp-for="Name">Recipe Name</label>
+                <label asp-for="Name">Име</label>
                 <input asp-for="Name" type="text" placeholder="Name">
                 <span asp-validation-for="Name" class="validation-script"></span>
             </div>
 
             <div class="recipe-category-input recipe-column">
-                <label asp-for="Category" for="">Category</label>
+                <label asp-for="Category" for="">Категория</label>
                 <select asp-for="Category" id="">
                     <option value="maindish">Main Dish</option>
                     <option value="salads">Salads</option>
@@ -26,37 +26,37 @@
             </div>
 
             <div class="recipe-cookingtime-input recipe-column">
-                <label asp-for="CookingTime">Cooking time / in minutes /</label>
+                <label asp-for="CookingTime">Време за приготвяне / в минути /</label>
                 <input asp-for="CookingTime" type="text" id="">
                 <span asp-validation-for="CookingTime" class="validation-script"></span>
             </div>
 
             <div class="recipe-servings-input recipe-column">
-                <label asp-for="Servings">Servings</label>
+                <label asp-for="Servings">Порции</label>
                 <input asp-for="Servings" type="text" id="">
                 <span asp-validation-for="Servings" class="validation-script"></span>
             </div>
 
             <div class="recipe-image-input recipe-column">
-                <label asp-for="Image">Add Image</label>
+                <label asp-for="Image">Снимка</label>
                 <input asp-for="Image" type="file" id="">
                 <span asp-validation-for="Image" class="validation-script"></span>
             </div>
 
-            <button type="submit" class="save-recipe">Change</button>
+            <button type="submit" class="save-recipe">Промени</button>
 
         </div>
 
         <div class="ingridients-directions-inputs">
 
             <div class="ingridients-input recipe-column">
-                <label asp-for="AllIngredients">Ingridients</label>
+                <label asp-for="AllIngredients">Продукти</label>
                 <textarea asp-for="AllIngredients" type="text" cols="15" rows="15"></textarea>
                 <span asp-validation-for="AllIngredients" class="validation-script"></span>
             </div>
 
             <div class="directions-input recipe-column">
-                <label asp-for="Instructions">Instructions</label>
+                <label asp-for="Instructions">Упътвания</label>
                 <textarea asp-for="Instructions" type="text" cols="15" rows="15"></textarea>
                 <span asp-validation-for="Instructions" class="validation-script"></span>
             </div>

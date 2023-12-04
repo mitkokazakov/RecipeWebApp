@@ -72,6 +72,7 @@
     width: 200px;
     margin-top: 50px;
     cursor: pointer;
+    letter-spacing: 2px;
 }
 
     .save-recipe:hover {
