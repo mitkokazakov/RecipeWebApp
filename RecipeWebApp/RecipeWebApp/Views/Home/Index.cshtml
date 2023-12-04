@@ -4,6 +4,19 @@
 
 @model IEnumerable<RecipeCoverViewModel>
 
+@{
+    Dictionary<string, string> categoryRepresent = new Dictionary<string, string>
+    {
+        {"maindish", "основни"},
+        {"salads", "салати"},
+        {"desert", "десерти"},
+        {"dough", "тестени"},
+        {"soups", "супи"},
+    };
+
+    
+}
+
 <link rel="stylesheet" href="~/css/homepage.css" asp-append-version="true" />
 <div>
 
@@ -19,11 +32,11 @@
     </div>
 
     <div class="recent-recipes">
-        <h1>Recent recipes</h1>
+        <h1>Най - нови рецепти</h1>
 
         @if (this.Model.Count() == 0)
         {
-            <h1>No Available Recipes</h1>
+            <h1>В момента няма налични рецепти!</h1>
         }
         else
         {
@@ -39,7 +52,7 @@
                         <div class="recipe-small" style="background-image: url('./recipes/@recipe.ImagePath');">
                             <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                 <div class="recent-recipes-heading">
-                                    <p class="recent-recipes-category">@recipe.Category</p>
+                                    <p class="recent-recipes-category">@categoryRepresent[recipe.Category.ToLower()].ToUpper()</p>
                                     <h3 class="recent-recipes-name">@recipe.Name</h3>
                                 </div>
                             </a>
@@ -54,7 +67,7 @@
                         <div class="recipe-large" style="background-image: url('./recipes/@recipe.ImagePath');">
                             <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                 <div class="recent-recipes-heading">
-                                    <p class="recent-recipes-category">@recipe.Category</p>
+                                    <p class="recent-recipes-category">@categoryRepresent[recipe.Category.ToLower()].ToUpper()</p>
                                     <h3 class="recent-recipes-name">@recipe.Name</h3>
                                 </div>
                             </a>
@@ -77,7 +90,7 @@
                             <div class="recipe-large" style="background-image: url('./recipes/@recipe.ImagePath');">
                                 <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                     <div class="recent-recipes-heading">
-                                        <p class="recent-recipes-category">@recipe.Category</p>
+                                        <p class="recent-recipes-category">@categoryRepresent[recipe.Category.ToLower()].ToUpper()</p>
                                         <h3 class="recent-recipes-name">@recipe.Name</h3>
                                     </div>
                                 </a>
@@ -91,7 +104,7 @@
                             <div class="recipe-small" style="background-image: url('./recipes/@recipe.ImagePath');">
                                 <a asp-controller="Recipe" asp-action="ViewRecipe" asp-route-id="@recipe.Id">
                                     <div class="recent-recipes-heading">
-                                        <p class="recent-recipes-category">@recipe.Category</p>
+                                        <p class="recent-recipes-category">@categoryRepresent[recipe.Category.ToLower()].ToUpper()</p>
                                         <h3 class="recent-recipes-name">@recipe.Name</h3>
                                     </div>
                                 </a>
