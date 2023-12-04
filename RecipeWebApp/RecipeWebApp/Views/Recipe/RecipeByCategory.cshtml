@@ -2,7 +2,20 @@
 
 <link rel="stylesheet" href="~/css/recipecategory.css" asp-append-version="true" />
 
-<h1 class="recipes-category-heading">@ViewBag.CurrentCategory.ToUpper()</h1>
+@{
+    Dictionary<string, string> categoryRepresent = new Dictionary<string, string>
+    {
+        {"maindish", "основни"},
+        {"salads", "салати"},
+        {"deserts", "десерти"},
+        {"dough", "тестени"},
+        {"soups", "супи"},
+    };
+
+    string currentCategory = categoryRepresent[ViewBag.CurrentCategory];
+}
+@*<h1 class="recipes-category-heading">@ViewBag.CurrentCategory.ToUpper()</h1>*@
+<h1 class="recipes-category-heading">@currentCategory.ToUpper()</h1>
 
 <div class="recipes-by-category">
 
@@ -17,7 +30,7 @@
                         <img src="~/recipes/@recipe.ImagePath" />
                     </div>
                 </a>
-                <h4 class="single-recipe-category-category">@recipe.Category</h4>
+                <h4 class="single-recipe-category-category">@currentCategory.ToUpper()</h4>
 
                 <h3 class="single-recipe-category-title">@recipe.Name</h3>
 
