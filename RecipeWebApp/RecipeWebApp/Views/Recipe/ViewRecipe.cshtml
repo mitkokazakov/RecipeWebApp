@@ -106,11 +106,14 @@
 
 </div>
 
-<div class="change-btn-wrapper">
-    <a asp-controller="Recipe" asp-action="Change" asp-route-id="@Model.Id" class="change-recipe-btn">Промени</a>
+@if (this.User.IsInRole("Admin"))
+{
+    <div class="change-btn-wrapper">
+        <a asp-controller="Recipe" asp-action="Change" asp-route-id="@Model.Id" class="change-recipe-btn">Промени</a>
 
-    <a class="delete-recipe-btn">Изтрий</a>
-</div>
+        <a class="delete-recipe-btn">Изтрий</a>
+    </div>
+}
 
 
 <div class="popup-delete">

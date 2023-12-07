@@ -16,15 +16,19 @@
         </div>
 
         <ul>
-            <li>
-                <a asp-controller="Recipe" asp-action="Add">
-                    <div class="icon-wrapper">
-                        <img src="~/images/addicon.png" alt="">
-                    </div>
-                    <p>ДОБАВИ РЕЦЕПТА</p>
-                </a>
+            @if (this.User.IsInRole("Admin"))
+            {
+                <li>
+                    <a asp-controller="Recipe" asp-action="Add">
+                        <div class="icon-wrapper">
+                            <img src="~/images/addicon.png" alt="">
+                        </div>
+                        <p>ДОБАВИ РЕЦЕПТА</p>
+                    </a>
 
-            </li>
+                </li>
+            }
+            
 
             <li>
                 <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="maindish">
@@ -79,15 +83,18 @@
 
     <div class="sidemenu">
         <ul>
-            <li>
-                <a asp-controller="Recipe" asp-action="Add">
-                    <div class="icon-wrapper">
-                        <img src="~/images/addicon.png" alt="">
-                    </div>
-                    <p>ДОБАВИ РЕЦЕПТА</p>
-                </a>
+            @if (this.User.IsInRole("Admin"))
+            {
+                <li>
+                    <a asp-controller="Recipe" asp-action="Add">
+                        <div class="icon-wrapper">
+                            <img src="~/images/addicon.png" alt="">
+                        </div>
+                        <p>ДОБАВИ РЕЦЕПТА</p>
+                    </a>
 
-            </li>
+                </li>
+            }
 
             <li>
                 <a asp-controller="Recipe" asp-action="RecipeByCategory" asp-route-id="maindish">

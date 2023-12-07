@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using RecipeWebApp.DTO;
 using RecipeWebApp.Services;
+using System.Data;
 
 namespace RecipeWebApp.Controllers
 {
@@ -13,12 +15,14 @@ namespace RecipeWebApp.Controllers
             this.recipeService = recipeService;
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Add(AddRecipeFormSubmit model)
         {
 
@@ -42,6 +46,7 @@ namespace RecipeWebApp.Controllers
             return View(recipe);
         }
 
+        [Authorize(Roles = "Admin")]
         public IActionResult Change(string id)
         {
             var recipe = recipeService.RetrieveInfoForChangeRecipe(id);
@@ -50,6 +55,7 @@ namespace RecipeWebApp.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Change(string id, ChangeRecipeFormModel model) 
         {
             await this.recipeService.ChangeRecipe(id, model);
@@ -57,6 +63,7 @@ namespace RecipeWebApp.Controllers
             return RedirectToAction("ViewRecipe", new { id = id});
         }
 
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(string id) 
         {
             await this.recipeService.DeleteRecipe(id);
