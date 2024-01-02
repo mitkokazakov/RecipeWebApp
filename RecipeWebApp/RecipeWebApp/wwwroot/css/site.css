@@ -54,14 +54,19 @@ nav {
     font-weight: 800;
     letter-spacing: 4px;
     color: #E87766;
+    margin-top:10px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-}
+    .logo-details p a {
+        color: #E87766;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    }
 
     nav ul li {
         display: flex;
