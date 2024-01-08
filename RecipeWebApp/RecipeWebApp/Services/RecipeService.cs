@@ -162,7 +162,7 @@ namespace RecipeWebApp.Services
 
         public IEnumerable<SingleRecipeViewModel> GetRecipesByCategory(string catergory) 
         {
-            var recipes = db.Recipies.Where(r => r.Category.ToLower() == catergory.ToLower()).OrderByDescending(r => r.CreatedOn).Select(r => new SingleRecipeViewModel() 
+            var recipes = db.Recipies.Where(r => r.Category.ToLower() == catergory.ToLower() && r.IsDeleted == false).OrderByDescending(r => r.CreatedOn).Select(r => new SingleRecipeViewModel() 
             {
                 Id = r.Id,
                 Name = r.Name,

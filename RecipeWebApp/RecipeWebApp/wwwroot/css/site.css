@@ -335,6 +335,13 @@ nav {
                 width: 48%;
             }
 
+                .sidemenu.open ul li a {
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:center;
+                    align-items:center;
+                }
+
                 .sidemenu.open ul li:hover {
                     scale: 1.2;
                 }
