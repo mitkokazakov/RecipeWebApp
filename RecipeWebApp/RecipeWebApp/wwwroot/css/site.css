@@ -389,6 +389,10 @@ nav {
         margin-bottom: 30px;
     }
 
+    .footer {
+        margin-top:100px;
+    }
+
     .footer-descr {
         text-align: center;
     }

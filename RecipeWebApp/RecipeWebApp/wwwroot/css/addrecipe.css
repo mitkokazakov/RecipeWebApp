@@ -84,3 +84,28 @@
     color: #E87766;
     font-weight: bold;
 }
+
+@media screen and (max-width: 480px) {
+    
+    .add-recipe {
+        display:flex;
+        flex-direction:column;
+    }
+
+    .add-recipe form {
+        flex-direction: column;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .recipe-column, .add-recipe-info, .ingridients-directions-inputs {
+        width: 100%;
+    }
+
+    .save-recipe {
+        position:absolute;
+        bottom:-100px;
+        margin-top:0px;
+    }
+
+}
