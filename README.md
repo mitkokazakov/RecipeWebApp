@@ -1,5 +1,7 @@
 # Simple Recipes Web App
 
+http://mitkokazakov-001-site3.itempurl.com/
+
 ## Overview
 This is a simple web application for browsing recipes.  
 Users can freely access and view all available recipes without the need to log in.
